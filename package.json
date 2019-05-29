@@ -2,5 +2,11 @@
   "name": "VR-Height-Adjuster",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-eslint": "^10.0.1",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
 }
