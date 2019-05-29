@@ -15,19 +15,19 @@ class VRGraphics {
 
             if (VRGraphics._vrDisplay.isPresenting) {
                 VRGraphics._gl.viewport(0, 0, VRGraphics._webGLCanvas.width * 0.5, VRGraphics._webGLCanvas.height);
-                window.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.leftViewMatrix);
-                window.renderSceneView(VRGraphics._frameData.leftProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.pose);
+                VRGraphics.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.leftViewMatrix);
+                VRGraphics.renderSceneView(VRGraphics._frameData.leftProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.pose);
 
                 VRGraphics._gl.viewport(VRGraphics._webGLCanvas.width * 0.5, 0, VRGraphics._webGLCanvas.width * 0.5, VRGraphics._webGLCanvas.height);
-                window.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.rightViewMatrix);
-                window.renderSceneView(VRGraphics._frameData.rightProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.pose);
+                VRGraphics.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.rightViewMatrix);
+                VRGraphics.renderSceneView(VRGraphics._frameData.rightProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.pose);
 
                 VRGraphics._vrDisplay.submitFrame();
             } else {
                 VRGraphics._gl.viewport(0, 0, VRGraphics._webGLCanvas.width, VRGraphics._webGLCanvas.height);
                 mat4.perspective(VRGraphics._projectionMat, Math.PI * 0.4, VRGraphics._webGLCanvas.width / VRGraphics._webGLCanvas.height, 0.1, 1024.0);
-                window.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.leftViewMatrix);
-                window.renderSceneView(VRGraphics._projectionMat, VRGraphics._viewMat, VRGraphics._frameData.pose);
+                VRGraphics.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.leftViewMatrix);
+                VRGraphics.renderSceneView(VRGraphics._projectionMat, VRGraphics._viewMat, VRGraphics._frameData.pose);
                 VRGraphics._stats.renderOrtho();
             }
         } else {
@@ -95,6 +95,104 @@ class VRGraphics {
         window.requestAnimationFrame(VRGraphics.loop);
     }
 
+    static getStandingViewMatrix(out, view) {
+        if (VRGraphics._vrDisplay.stageParameters) {
+            // If the headset provides stageParameters use the
+            // sittingToStandingTransform to transform the view matrix into a
+            // space where the floor in the center of the users play space is the
+            // origin.
+            mat4.invert(out, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
+            mat4.multiply(out, view, out);
+        } else {
+            // Otherwise you'll want to translate the view to compensate for the
+            // scene floor being at Y=0. Ideally this should match the user's
+            // height (you may want to make it configurable). For this demo we'll
+            // just assume all human beings are 1.65 meters (~5.4ft) tall.
+            mat4.identity(out);
+            mat4.translate(out, out, [0, VRGraphics.PLAYER_HEIGHT, 0]);
+            mat4.invert(out, out);
+            mat4.multiply(out, view, out);
+        }
+    }
+
+    static renderSceneView(projection, view, pose) {
+        VRGraphics._cubeIsland.render(projection, view, VRGraphics._stats);
+
+        // For fun, draw a blue cube where the players head would have been if
+        // we weren't taking the stageParameters into account. It'll start in
+        // the center of the floor.
+        let orientation = pose.orientation;
+        let position = pose.position;
+        if (!orientation) {
+            orientation = [0, 0, 0, 1];
+        }
+        if (!position) {
+            position = [0, 0, 0];
+        }
+        VRGraphics._debugGeom.bind(projection, view);
+        VRGraphics._debugGeom.drawCube(orientation, position, 0.2, [0, 0, 1, 1]);
+    }
+
+    static updateStage() {
+        if (VRGraphics._vrDisplay) {
+            if (VRGraphics._vrDisplay.stageParameters &&
+                VRGraphics._vrDisplay.stageParameters.sizeX > 0 &&
+                VRGraphics._vrDisplay.stageParameters.sizeZ > 0) {
+                // If we have stageParameters with a valid size use that to resize
+                // our scene to match the users available space more closely. The
+                // check for size > 0 is necessary because some devices, like the
+                // Oculus Rift, can give you a standing space coordinate but don't
+                // have a configured play area. These devices will return a stage
+                // size of 0.
+                VRGraphics._cubeIsland.resize(VRGraphics._vrDisplay.stageParameters.sizeX, VRGraphics._vrDisplay.stageParameters.sizeZ);
+            } else {
+                if (VRGraphics._vrDisplay.stageParameters) {
+                    VRSamplesUtil.addInfo('VRDisplay reported stageParameters, but stage size was 0. Using default size.', 3000);
+                } else {
+                    VRSamplesUtil.addInfo('VRDisplay did not report stageParameters', 3000);
+                }
+            }
+        }
+    }
+
+    static onVRPresentChange() {
+        VRGraphics.onResize();
+
+        if (VRGraphics._vrDisplay.isPresenting) {
+            if (VRGraphics._vrDisplay.capabilities.hasExternalDisplay) {
+                VRSamplesUtil.removeButton(VRGraphics._vrPresentButton);
+                VRGraphics._vrPresentButton = VRSamplesUtil.addButton("Exit VR", "E", "assets/icons/cardboard64.png", VRGraphics.onVRExitPresent);
+            }
+        } else {
+            if (VRGraphics._vrDisplay.capabilities.hasExternalDisplay) {
+                VRSamplesUtil.removeButton(VRGraphics._vrPresentButton);
+                VRGraphics._vrPresentButton = VRSamplesUtil.addButton("Enter VR", "E", "assets/icons/cardboard64.png", VRGraphics.onVRRequestPresent);
+            }
+        }
+
+        VRGraphics.updateStage();
+    }
+
+    static onVRRequestPresent() {
+        VRGraphics._vrDisplay.requestPresent([{ source: VRGraphics._webGLCanvas }]).then(() => {}, (err) => {
+            let errMsg = 'requestPresent failed.';
+            if (err && err.message) {
+                errMsg += '<br/>' + err.message
+            }
+            VRSamplesUtil.addError(errMsg, 2000);
+        });
+    }
+
+    static onVRExitPresent() {
+        if (!VRGraphics._vrDisplay.isPresenting) {
+            return;
+        }
+
+        VRGraphics._vrDisplay.exitPresent().then(() => {}, () => {
+            VRSamplesUtil.addError('exitPresent failed.', 2000);
+        });
+    }
+
     static onResize() {
         if (VRGraphics._vrDisplay && VRGraphics._vrDisplay.isPresenting) {
             const leftEye = VRGraphics._vrDisplay.getEyeParameters('left');
@@ -108,14 +206,26 @@ class VRGraphics {
         }
     }
 
+    static getGL() {
+        return VRGraphics._gl;
+    }
+
+    static onClick() {
+        // Reset the background color to a random value
+        VRGraphics.getGL().clearColor(
+            Math.random() * 0.5,
+            Math.random() * 0.5,
+            Math.random() * 0.5, 1.0);
+    }
+
     static initialize() {
         VRGraphics._webGLCanvas = document.getElementById('webgl-canvas');
-        VRGraphics._webGLCanvas.addEventListener("click", onClick, false);
+        VRGraphics._webGLCanvas.addEventListener('click', VRGraphics.onClick, false);
 
         if (navigator.getVRDisplays) {
-            VRGraphics.frameData = new VRFrameData();
+            VRGraphics._frameData = new VRFrameData();
 
-            navigator.getVRDisplays().then(function (displays) {
+            navigator.getVRDisplays().then(displays => {
                 if (displays.length > 0) {
                     VRGraphics._vrDisplay = displays[displays.length - 1];
                     VRGraphics._vrDisplay.depthNear = 0.1;
@@ -123,33 +233,33 @@ class VRGraphics {
 
                     VRGraphics.initWebGL(VRGraphics._vrDisplay.capabilities.hasExternalDisplay);
 
-                    window.updateStage();
+                    VRGraphics.updateStage();
 
-                    VRSamplesUtil.addButton("Reset Pose", "R", null, () => {
+                    VRSamplesUtil.addButton('Reset Pose', 'R', null, () => {
                         VRGraphics._vrDisplay.resetPose();
                     });
 
                     if (VRGraphics._vrDisplay.capabilities.canPresent)
-                        VRGraphics.vrPresentButton = VRSamplesUtil.addButton("Enter VR", "E", "assets/icons/cardboard64.png", window.onVRRequestPresent);
+                        VRGraphics._vrPresentButton = VRSamplesUtil.addButton('Enter VR', 'E', 'assets/icons/cardboard64.png', VRGraphics.onVRRequestPresent);
 
                     // For the benefit of automated testing. Safe to ignore.
                     if (VRGraphics._vrDisplay.capabilities.canPresent && WGLUUrl.getBool('canvasClickPresents', false))
-                        VRGraphics._webGLCanvas.addEventListener("click", window.onVRRequestPresent, false);
+                        VRGraphics._webGLCanvas.addEventListener('click', VRGraphics.onVRRequestPresent, false);
 
-                    window.addEventListener('vrdisplaypresentchange', window.onVRPresentChange, false);
-                    window.addEventListener('vrdisplayactivate', window.onVRRequestPresent, false);
-                    window.addEventListener('vrdisplaydeactivate', window.onVRExitPresent, false);
+                    window.addEventListener('vrdisplaypresentchange', VRGraphics.onVRPresentChange, false);
+                    window.addEventListener('vrdisplayactivate', VRGraphics.onVRRequestPresent, false);
+                    window.addEventListener('vrdisplaydeactivate', VRGraphics.onVRExitPresent, false);
                 } else {
                     VRGraphics.initWebGL(false);
-                    VRSamplesUtil.addInfo("WebVR supported, but no VRDisplays found.", 3000);
+                    VRSamplesUtil.addInfo('WebVR supported, but no VRDisplays found.', 3000);
                 }
             });
         } else if (navigator.getVRDevices) {
             VRGraphics.initWebGL(false);
-            VRSamplesUtil.addError("Your browser supports WebVR but not the latest version. See <a href='http://webvr.info'>webvr.info</a> for more info.");
+            VRSamplesUtil.addError('Your browser supports WebVR but not the latest version. See <a href=\'http://webvr.info\'>webvr.info</a> for more info.');
         } else {
             VRGraphics.initWebGL(false);
-            VRSamplesUtil.addError("Your browser does not support WebVR. See <a href='http://webvr.info'>webvr.info</a> for assistance.");
+            VRSamplesUtil.addError('Your browser does not support WebVR. See <a href=\'http://webvr.info\'>webvr.info</a> for assistance.');
         }
     }
 }
@@ -165,3 +275,4 @@ VRGraphics._cubeIsland = null;
 VRGraphics._debugGeom = null;
 VRGraphics._viewMat = mat4.create();
 VRGraphics._projectionMat = mat4.create();
+VRGraphics._vrPresentButton = null;
