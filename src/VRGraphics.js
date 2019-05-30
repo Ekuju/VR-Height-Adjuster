@@ -36,8 +36,8 @@ class VRGraphics {
             mat4.perspective(VRGraphics._projectionMat, Math.PI*0.4, VRGraphics._webGLCanvas.width / VRGraphics._webGLCanvas.height, 0.1, 1024.0);
             mat4.identity(VRGraphics._viewMat);
             mat4.translate(VRGraphics._viewMat, VRGraphics._viewMat, [0, -VRGraphics.PLAYER_HEIGHT, 0]);
-            VRGraphics._cubeIsland.render(VRGraphics._projectionMat, VRGraphics._viewMat, VRGraphics._stats);
             VRGraphics._player1.render(VRGraphics._projectionMat, VRGraphics._viewMat);
+            VRGraphics._cubeIsland.render(VRGraphics._projectionMat, VRGraphics._viewMat, VRGraphics._stats);
 
             VRGraphics._stats.renderOrtho();
         }
@@ -188,8 +188,8 @@ class VRGraphics {
     }
 
     static renderSceneView(projection, view, pose) {
-        VRGraphics._cubeIsland.render(projection, view, VRGraphics._stats);
         VRGraphics._player1.render(projection, view);
+        VRGraphics._cubeIsland.render(projection, view, VRGraphics._stats);
 
         // For fun, draw a blue cube where the players head would have been if
         // we weren't taking the stageParameters into account. It'll start in

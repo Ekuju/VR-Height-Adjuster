@@ -39,10 +39,9 @@ class OBJModel {
         this._gl.enableVertexAttribArray(this._program.attrib.position);
         this._gl.enableVertexAttribArray(this._program.attrib.normal);
 
-        this._gl.vertexAttribPointer(this._program.attrib.position, 3, this._gl.FLOAT, false, 32, 0);
-        this._gl.vertexAttribPointer(this._program.attrib.normal, 3, this._gl.FLOAT, false, 32, 12);
-
-        this._gl.uniform1i(this._program.uniform.diffuse, 0);
+        // stride is 4 * index count stride (6 for OBJModel)
+        this._gl.vertexAttribPointer(this._program.attrib.position, 3, this._gl.FLOAT, false, 24, 0);
+        this._gl.vertexAttribPointer(this._program.attrib.normal, 3, this._gl.FLOAT, false, 24, 12);
 
         this._gl.drawElements(this._gl.TRIANGLES, this._indexCount, this._gl.UNSIGNED_SHORT, 0);
     }
@@ -189,7 +188,6 @@ OBJModel.VERTEX_SHADER = [
 
 OBJModel.FRAGMENT_SHADER = [
     "precision mediump float;",
-    "uniform sampler2D diffuse;",
     "varying vec3 vLight;",
 
     "void main() {",

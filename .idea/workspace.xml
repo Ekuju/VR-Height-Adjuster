@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4401dcec-ac0b-4690-989c-da7ac694416d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/OBJModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/vr-cube-island.js" beforeDir="false" afterPath="$PROJECT_DIR$/libs/vr-cube-island.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Initialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initialize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OBJModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/OBJModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VRGraphics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/VRGraphics.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -41,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+            <state relative-caret-position="217">
+              <caret line="234" column="96" lean-forward="true" selection-start-line="234" selection-start-column="96" selection-end-line="234" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -50,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/OBJModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="46" column="96" lean-forward="true" selection-start-line="46" selection-start-column="96" selection-end-line="46" selection-end-column="96" />
+            <state relative-caret-position="320">
+              <caret line="115" column="60" selection-start-line="115" selection-start-column="60" selection-end-line="115" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -68,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/vr-cube-island.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="58" column="79" lean-forward="true" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="79" />
+            <state relative-caret-position="700">
+              <caret line="50" column="61" lean-forward="true" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -107,11 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;</find>
-      <find>vrDisplay</find>
-      <find>sizeX</find>
-      <find>vrDisplay</find>
-      <find>vrPresentButton</find>
       <find>onVRRequestPresent</find>
       <find>_frameData</find>
       <find>frameData</find>
@@ -134,9 +126,14 @@
       <find>resize</find>
       <find>_indexCount</find>
       <find>new VRCubeIsland</find>
-      <find>diffuse</find>
       <find>OBJModel {</find>
+      <find>diffuse</find>
+      <find>tex</find>
+      <find>render(</find>
+      <find>attr</find>
       <find>_cubeIsland</find>
+      <find>enter</find>
+      <find>console.log</find>
     </findStrings>
     <replaceStrings>
       <replace>libs/thirdparty</replace>
@@ -155,10 +152,10 @@
         <option value="$PROJECT_DIR$/src/VRInformation.js" />
         <option value="$PROJECT_DIR$/WebServer.js" />
         <option value="$PROJECT_DIR$/src/Initialize.js" />
-        <option value="$PROJECT_DIR$/libs/vr-cube-island.js" />
-        <option value="$PROJECT_DIR$/src/OBJModel.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/libs/vr-cube-island.js" />
         <option value="$PROJECT_DIR$/src/VRGraphics.js" />
+        <option value="$PROJECT_DIR$/src/OBJModel.js" />
       </list>
     </option>
   </component>
@@ -168,11 +165,11 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="2576" />
-    <option name="height" value="1416" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1840" />
+    <option name="y" value="-872" />
+    <option name="width" value="1808" />
+    <option name="height" value="1091" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -280,7 +277,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9788000" />
+    <option name="totallyTimeSpent" value="11076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1830" y="-893" width="1808" height="1091" extended-state="0" />
@@ -346,15 +343,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        <state relative-caret-position="217">
+          <caret line="234" column="96" lean-forward="true" selection-start-line="234" selection-start-column="96" selection-end-line="234" selection-end-column="96" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/vr-cube-island.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="58" column="79" lean-forward="true" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="79" />
+        <state relative-caret-position="700">
+          <caret line="50" column="61" lean-forward="true" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -363,8 +360,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OBJModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="46" column="96" lean-forward="true" selection-start-line="46" selection-start-column="96" selection-end-line="46" selection-end-column="96" />
+        <state relative-caret-position="320">
+          <caret line="115" column="60" selection-start-line="115" selection-start-column="60" selection-end-line="115" selection-end-column="60" />
         </state>
       </provider>
     </entry>
