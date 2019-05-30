@@ -4,22 +4,20 @@
 
 'use strict';
 
-class VRCubeIsland {
-    constructor(gl, texture, width, depth) {
+class OBJModel {
+    constructor(gl, path, width, depth) {
         this._gl = gl;
-        this._statsMat = mat4.create();
-        this._texture = texture;
+        this._path = path;
         this._width = null;
         this._depth = null;
         this._indexCount = null;
 
         this._program = new WGLUProgram(gl);
-        this._program.attachShaderSource(VRCubeIsland.VERTEX_SHADER, gl.VERTEX_SHADER);
-        this._program.attachShaderSource(VRCubeIsland.FRAGMENT_SHADER, gl.FRAGMENT_SHADER);
+        this._program.attachShaderSource(OBJModel.VERTEX_SHADER, gl.VERTEX_SHADER);
+        this._program.attachShaderSource(OBJModel.FRAGMENT_SHADER, gl.FRAGMENT_SHADER);
         this._program.bindAttribLocation({
             position: 0,
-            texCoord: 1,
-            normal: 2,
+            normal: 1,
         });
         this._program.link();
 
@@ -29,7 +27,7 @@ class VRCubeIsland {
         this.resize(width, depth);
     }
 
-    render(projectionMat, modelViewMat, stats) {
+    render(projectionMat, modelViewMat) {
         this._program.use();
 
         this._gl.uniformMatrix4fv(this._program.uniform.projectionMat, false, projectionMat);
@@ -39,29 +37,14 @@ class VRCubeIsland {
         this._gl.bindBuffer(this._gl.ELEMENT_ARRAY_BUFFER, this._indexBuffer);
 
         this._gl.enableVertexAttribArray(this._program.attrib.position);
-        this._gl.enableVertexAttribArray(this._program.attrib.texCoord);
         this._gl.enableVertexAttribArray(this._program.attrib.normal);
 
         this._gl.vertexAttribPointer(this._program.attrib.position, 3, this._gl.FLOAT, false, 32, 0);
-        this._gl.vertexAttribPointer(this._program.attrib.texCoord, 2, this._gl.FLOAT, false, 32, 12);
-        this._gl.vertexAttribPointer(this._program.attrib.normal, 3, this._gl.FLOAT, false, 32, 20);
+        this._gl.vertexAttribPointer(this._program.attrib.normal, 3, this._gl.FLOAT, false, 32, 12);
 
-
-        this._gl.activeTexture(this._gl.TEXTURE0);
         this._gl.uniform1i(this._program.uniform.diffuse, 0);
-        this._gl.bindTexture(this._gl.TEXTURE_2D, this._texture);
 
         this._gl.drawElements(this._gl.TRIANGLES, this._indexCount, this._gl.UNSIGNED_SHORT, 0);
-
-        if (stats) {
-            // To ensure that the FPS counter is visible in VR mode we have to
-            // render it as part of the scene.
-            mat4.fromTranslation(this._statsMat, [0, 1.5, -this._depth * 0.5]);
-            mat4.scale(this._statsMat, this._statsMat, [0.5, 0.5, 0.5]);
-            mat4.rotateX(this._statsMat, this._statsMat, -0.75);
-            mat4.multiply(this._statsMat, modelViewMat, this._statsMat);
-            stats.render(projectionMat, this._statsMat);
-        }
     }
 
     resize(width, depth) {
@@ -74,69 +57,73 @@ class VRCubeIsland {
         // Build a single box.
         const appendBox = (left, bottom, back, right, top, front) => {
             // Bottom
-            let idx = cubeVerts.length / 8.0;
+            let idx = cubeVerts.length / 6.0;
             cubeIndices.push(idx, idx + 1, idx + 2);
             cubeIndices.push(idx, idx + 2, idx + 3);
 
-            cubeVerts.push(left, bottom, back, 0.0, 1.0, 0.0, -1.0, 0.0);
-            cubeVerts.push(right, bottom, back, 1.0, 1.0, 0.0, -1.0, 0.0);
-            cubeVerts.push(right, bottom, front, 1.0, 0.0, 0.0, -1.0, 0.0);
-            cubeVerts.push(left, bottom, front, 0.0, 0.0, 0.0, -1.0, 0.0);
+            cubeVerts.push(left, bottom, back, 0.0, -1.0, 0.0);
+            cubeVerts.push(right, bottom, back, 0.0, -1.0, 0.0);
+            cubeVerts.push(right, bottom, front, 0.0, -1.0, 0.0);
+            cubeVerts.push(left, bottom, front, 0.0, -1.0, 0.0);
 
             // Top
-            idx = cubeVerts.length / 8.0;
+            idx = cubeVerts.length / 6.0;
             cubeIndices.push(idx, idx + 2, idx + 1);
             cubeIndices.push(idx, idx + 3, idx + 2);
 
-            cubeVerts.push(left, top, back, 0.0, 0.0, 0.0, 1.0, 0.0);
-            cubeVerts.push(right, top, back, 1.0, 0.0, 0.0, 1.0, 0.0);
-            cubeVerts.push(right, top, front, 1.0, 1.0, 0.0, 1.0, 0.0);
-            cubeVerts.push(left, top, front, 0.0, 1.0, 0.0, 1.0, 0.0);
+            cubeVerts.push(left, top, back, 0.0, 1.0, 0.0);
+            cubeVerts.push(right, top, back, 0.0, 1.0, 0.0);
+            cubeVerts.push(right, top, front, 0.0, 1.0, 0.0);
+            cubeVerts.push(left, top, front, 0.0, 1.0, 0.0);
 
             // Left
-            idx = cubeVerts.length / 8.0;
+            idx = cubeVerts.length / 6.0;
             cubeIndices.push(idx, idx + 2, idx + 1);
             cubeIndices.push(idx, idx + 3, idx + 2);
 
-            cubeVerts.push(left, bottom, back, 0.0, 1.0, -1.0, 0.0, 0.0);
-            cubeVerts.push(left, top, back, 0.0, 0.0, -1.0, 0.0, 0.0);
-            cubeVerts.push(left, top, front, 1.0, 0.0, -1.0, 0.0, 0.0);
-            cubeVerts.push(left, bottom, front, 1.0, 1.0, -1.0, 0.0, 0.0);
+            cubeVerts.push(left, bottom, back, -1.0, 0.0, 0.0);
+            cubeVerts.push(left, top, back, -1.0, 0.0, 0.0);
+            cubeVerts.push(left, top, front,  -1.0, 0.0, 0.0);
+            cubeVerts.push(left, bottom, front, -1.0, 0.0, 0.0);
 
             // Right
-            idx = cubeVerts.length / 8.0;
+            idx = cubeVerts.length / 6.0;
             cubeIndices.push(idx, idx + 1, idx + 2);
             cubeIndices.push(idx, idx + 2, idx + 3);
 
-            cubeVerts.push(right, bottom, back, 1.0, 1.0, 1.0, 0.0, 0.0);
-            cubeVerts.push(right, top, back, 1.0, 0.0, 1.0, 0.0, 0.0);
-            cubeVerts.push(right, top, front, 0.0, 0.0, 1.0, 0.0, 0.0);
-            cubeVerts.push(right, bottom, front, 0.0, 1.0, 1.0, 0.0, 0.0);
+            cubeVerts.push(right, bottom, back, 1.0, 0.0, 0.0);
+            cubeVerts.push(right, top, back, 1.0, 0.0, 0.0);
+            cubeVerts.push(right, top, front, 1.0, 0.0, 0.0);
+            cubeVerts.push(right, bottom, front, 1.0, 0.0, 0.0);
 
             // Back
-            idx = cubeVerts.length / 8.0;
+            idx = cubeVerts.length / 6.0;
             cubeIndices.push(idx, idx + 2, idx + 1);
             cubeIndices.push(idx, idx + 3, idx + 2);
 
-            cubeVerts.push(left, bottom, back, 1.0, 1.0, 0.0, 0.0, -1.0);
-            cubeVerts.push(right, bottom, back, 0.0, 1.0, 0.0, 0.0, -1.0);
-            cubeVerts.push(right, top, back, 0.0, 0.0, 0.0, 0.0, -1.0);
-            cubeVerts.push(left, top, back, 1.0, 0.0, 0.0, 0.0, -1.0);
+            cubeVerts.push(left, bottom, back, 0.0, 0.0, -1.0);
+            cubeVerts.push(right, bottom, back, 0.0, 0.0, -1.0);
+            cubeVerts.push(right, top, back, 0.0, 0.0, -1.0);
+            cubeVerts.push(left, top, back, 0.0, 0.0, -1.0);
 
             // Front
-            idx = cubeVerts.length / 8.0;
+            idx = cubeVerts.length / 6.0;
             cubeIndices.push(idx, idx + 1, idx + 2);
             cubeIndices.push(idx, idx + 2, idx + 3);
 
-            cubeVerts.push(left, bottom, front, 0.0, 1.0, 0.0, 0.0, 1.0);
-            cubeVerts.push(right, bottom, front, 1.0, 1.0, 0.0, 0.0, 1.0);
-            cubeVerts.push(right, top, front, 1.0, 0.0, 0.0, 0.0, 1.0);
-            cubeVerts.push(left, top, front, 0.0, 0.0, 0.0, 0.0, 1.0);
+            cubeVerts.push(left, bottom, front, 0.0, 0.0, 1.0);
+            cubeVerts.push(right, bottom, front, 0.0, 0.0, 1.0);
+            cubeVerts.push(right, top, front, 0.0, 0.0, 1.0);
+            cubeVerts.push(left, top, front, 0.0, 0.0, 1.0);
         };
 
         // Appends a cube with the given centerpoint and size.
         const appendCube = (x, y, z, size) => {
             const halfSize = size * 0.5;
+            // x += Math.random() * 10 - 5;
+            // z += Math.random() * 10 - 5;
+            // y += Math.random() * 2;
+            y += 1;
             appendBox(
                 x - halfSize,
                 y - halfSize,
@@ -182,13 +169,11 @@ class VRCubeIsland {
     }
 }
 
-VRCubeIsland.VERTEX_SHADER = [
+OBJModel.VERTEX_SHADER = [
     "uniform mat4 projectionMat;",
     "uniform mat4 modelViewMat;",
     "attribute vec3 position;",
-    "attribute vec2 texCoord;",
     "attribute vec3 normal;",
-    "varying vec2 vTexCoord;",
     "varying vec3 vLight;",
 
     "const vec3 lightDir = vec3(0.75, 0.5, 1.0);",
@@ -198,18 +183,16 @@ VRCubeIsland.VERTEX_SHADER = [
     "void main() {",
     "  float lightFactor = max(dot(normalize(lightDir), normal), 0.0);",
     "  vLight = ambientColor + (lightColor * lightFactor);",
-    "  vTexCoord = texCoord;",
-    "  gl_Position = projectionMat * modelViewMat * vec4(position, 1.0);",
+    "  gl_Position = projectionMat * modelViewMat * vec4( position, 1.0 );",
     "}",
 ].join('\n');
 
-VRCubeIsland.FRAGMENT_SHADER = [
+OBJModel.FRAGMENT_SHADER = [
     "precision mediump float;",
     "uniform sampler2D diffuse;",
-    "varying vec2 vTexCoord;",
     "varying vec3 vLight;",
 
     "void main() {",
-    "  gl_FragColor = vec4(vLight, 1.0) * texture2D(diffuse, vTexCoord);",
+    "  gl_FragColor = vec4(vLight, 1.0);",
     "}",
 ].join('\n');

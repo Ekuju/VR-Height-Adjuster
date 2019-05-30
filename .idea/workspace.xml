@@ -2,125 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4401dcec-ac0b-4690-989c-da7ac694416d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Initialize.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/VRGraphics.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/VR Height Adjuster.iml" afterPath="$PROJECT_DIR$/.idea/VR Height Adjuster.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/libs/thirdparty/wglu-debug-geometry.js" afterPath="$PROJECT_DIR$/libs/thirdparty/wglu/wglu-debug-geometry.js" />
-      <change beforePath="$PROJECT_DIR$/libs/thirdparty/wglu-program.js" afterPath="$PROJECT_DIR$/libs/thirdparty/wglu/wglu-program.js" />
-      <change beforePath="$PROJECT_DIR$/libs/thirdparty/wglu-stats.js" afterPath="$PROJECT_DIR$/libs/thirdparty/wglu/wglu-stats.js" />
-      <change beforePath="$PROJECT_DIR$/libs/thirdparty/wglu-texture.js" afterPath="$PROJECT_DIR$/libs/thirdparty/wglu/wglu-texture.js" />
-      <change beforePath="$PROJECT_DIR$/libs/thirdparty/wglu-url.js" afterPath="$PROJECT_DIR$/libs/thirdparty/wglu/wglu-url.js" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change afterPath="$PROJECT_DIR$/src/OBJModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/vr-cube-island.js" beforeDir="false" afterPath="$PROJECT_DIR$/libs/vr-cube-island.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Initialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initialize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VRGraphics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/VRGraphics.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="75" column="45" lean-forward="false" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="435">
+              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Initialize.js" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Initialize.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="121" column="6" lean-forward="true" selection-start-line="121" selection-start-column="6" selection-end-line="121" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="90">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VRGraphics.js" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="60" column="10" lean-forward="true" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="30">
+              <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wglu-debug-geometry.js" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/OBJModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="46" column="96" lean-forward="true" selection-start-line="46" selection-start-column="96" selection-end-line="46" selection-end-column="96" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/thirdparty/wglu/wglu-debug-geometry.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="253" column="2" lean-forward="false" selection-start-line="253" selection-start-column="2" selection-end-line="253" selection-end-column="2" />
-              <folding>
-                <marker date="1559093041603" expanded="false" signature="0:1064" ph="/*...*/" />
-                <marker date="1559093041603" expanded="true" signature="1142:1518" ph="[...]" />
-                <marker date="1559093041603" expanded="true" signature="1534:1717" ph="//..." />
-                <marker date="1559093041603" expanded="true" signature="1738:2014" ph="[...]" />
-                <marker date="1559093041603" expanded="true" signature="2063:6797" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="2581:2611" ph="//..." />
-                <marker date="1559093041603" expanded="true" signature="4577:4607" ph="//..." />
-                <marker date="1559093041603" expanded="true" signature="4859:5455" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="5605:5998" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="6070:6100" ph="//..." />
-                <marker date="1559093041603" expanded="true" signature="6866:7424" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="7476:7649" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="7727:8289" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="8387:8671" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="8756:8990" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="9075:9267" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="9337:9507" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="9584:9785" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="9870:10104" ph="{...}" />
-                <marker date="1559093041603" expanded="true" signature="10175:10345" ph="{...}" />
-              </folding>
+            <state relative-caret-position="3495">
+              <caret line="253" column="2" selection-start-line="253" selection-start-column="2" selection-end-line="253" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vr-cube-island.js" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/vr-cube-island.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="711">
-              <caret line="197" column="54" lean-forward="false" selection-start-line="197" selection-start-column="54" selection-end-line="197" selection-end-column="54" />
+            <state relative-caret-position="420">
+              <caret line="58" column="79" lean-forward="true" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="79" />
               <folding>
-                <marker date="1559093069066" expanded="true" signature="0:164" ph="//..." />
-                <marker date="1559093069066" expanded="true" signature="166:196" ph="/*...*/" />
-                <marker date="1559093069066" expanded="true" signature="198:402" ph="/*...*/" />
-                <marker date="1559093069066" expanded="true" signature="478:1139" ph="[...]" />
-                <marker date="1559093069066" expanded="true" signature="1174:1410" ph="[...]" />
-                <marker date="1559093069066" expanded="true" signature="1480:1990" ph="{...}" />
-                <marker date="1559093069066" expanded="true" signature="1782:1843" ph="{...}" />
-                <marker date="1559093069066" expanded="true" signature="2049:6545" ph="{...}" />
-                <marker date="1559093069066" expanded="true" signature="2264:4761" ph="{...}" />
-                <marker date="1559093069066" expanded="true" signature="4862:5019" ph="{...}" />
-                <marker date="1559093069066" expanded="true" signature="5025:5249" ph="//..." />
-                <marker date="1559093069066" expanded="true" signature="6626:8046" ph="{...}" />
-                <marker date="1559093069066" expanded="true" signature="7612:8042" ph="{...}" />
-                <marker date="1559093069066" expanded="true" signature="7620:7727" ph="//..." />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebServer.js" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/models/ct.obj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-204349">
+              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="165">
+              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -137,35 +107,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>media</find>
-      <find>Reset</find>
-      <find>Reset pose</find>
-      <find>Enter Vr</find>
-      <find>js/third-party</find>
-      <find>png</find>
-      <find>this</find>
-      <find>PLAYER_HEIGHT</find>
-      <find>renderSceneView</find>
-      <find>vrDisplay =</find>
-      <find>navigator</find>
-      <find>stats</find>
-      <find>initWebGL</find>
-      <find>onResize</find>
-      <find>static</find>
-      <find>getFrameData</find>
-      <find>_frameData =</find>
-      <find>frameData =</find>
-      <find>frameData</find>
-      <find>t</find>
-      <find>projectionMat</find>
-      <find>mat4.create()</find>
-      <find>_projectionMat</find>
-      <find>_webGLGraphics</find>
-      <find>webglCanvas</find>
+      <find>&quot;</find>
       <find>vrDisplay</find>
-      <find>cubeIsland</find>
+      <find>sizeX</find>
+      <find>vrDisplay</find>
+      <find>vrPresentButton</find>
+      <find>onVRRequestPresent</find>
+      <find>_frameData</find>
+      <find>frameData</find>
+      <find>VRGraphics\.[a-zA-Z]+</find>
       <find>gl</find>
-      <find>getStandingViewMatrix</find>
+      <find>indexCount</find>
+      <find>gl</find>
+      <find>window.</find>
+      <find>PLAYER_HEIGHT</find>
+      <find>_width</find>
+      <find>width</find>
+      <find>_statsMat</find>
+      <find>Cube</find>
+      <find>CubeIsland</find>
+      <find>cubeIsland</find>
+      <find>normal</find>
+      <find>lightFactor</find>
+      <find>lightColor</find>
+      <find>ambientColor</find>
+      <find>resize</find>
+      <find>_indexCount</find>
+      <find>new VRCubeIsland</find>
+      <find>diffuse</find>
+      <find>OBJModel {</find>
+      <find>_cubeIsland</find>
     </findStrings>
     <replaceStrings>
       <replace>libs/thirdparty</replace>
@@ -182,27 +153,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/VRInformation.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/WebServer.js" />
         <option value="$PROJECT_DIR$/src/Initialize.js" />
+        <option value="$PROJECT_DIR$/libs/vr-cube-island.js" />
+        <option value="$PROJECT_DIR$/src/OBJModel.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/VRGraphics.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
-  </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -212,93 +176,81 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="VR Height Adjuster" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VR Height Adjuster" type="462c0819:PsiDirectoryNode" />
+              <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="VR Height Adjuster" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VR Height Adjuster" type="462c0819:PsiDirectoryNode" />
+              <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="VR Height Adjuster" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VR Height Adjuster" type="462c0819:PsiDirectoryNode" />
+              <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="icons" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="VR Height Adjuster" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VR Height Adjuster" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="textures" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VR Height Adjuster" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VR Height Adjuster" type="462c0819:PsiDirectoryNode" />
+              <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="VR Height Adjuster" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VR Height Adjuster" type="462c0819:PsiDirectoryNode" />
+              <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
               <item name="thirdparty" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="VR Height Adjuster" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VR Height Adjuster" type="462c0819:PsiDirectoryNode" />
+              <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
               <item name="thirdparty" type="462c0819:PsiDirectoryNode" />
               <item name="wglu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="VR Height Adjuster" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VR Height Adjuster" type="462c0819:PsiDirectoryNode" />
+              <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Projects\VR Height Adjuster" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Projects\VR Height Adjuster\assets\icons" />
       <recent name="C:\Users\admin\Projects\VR Height Adjuster\assets\textures" />
       <recent name="C:\Users\admin\Projects\VR Height Adjuster\assets" />
       <recent name="C:\Users\admin\Projects\VR Height Adjuster\libs\thirdparty\wglu" />
       <recent name="C:\Users\admin\Projects\VR Height Adjuster\libs\thirdparty" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="C:\Users\admin\Projects\VR Height Adjuster" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -312,9 +264,6 @@
         </RuleState>
       </list>
     </option>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -331,123 +280,91 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5712000" />
+    <option name="totallyTimeSpent" value="9788000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="1830" y="-893" width="1808" height="1091" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23391159" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/vr-cube-island.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="197" column="54" lean-forward="false" selection-start-line="197" selection-start-column="54" selection-end-line="197" selection-end-column="54" />
-          <folding>
-            <marker date="1559093069066" expanded="true" signature="0:164" ph="//..." />
-            <marker date="1559093069066" expanded="true" signature="166:196" ph="/*...*/" />
-            <marker date="1559093069066" expanded="true" signature="198:402" ph="/*...*/" />
-            <marker date="1559093069066" expanded="true" signature="478:1139" ph="[...]" />
-            <marker date="1559093069066" expanded="true" signature="1174:1410" ph="[...]" />
-            <marker date="1559093069066" expanded="true" signature="1480:1990" ph="{...}" />
-            <marker date="1559093069066" expanded="true" signature="1782:1843" ph="{...}" />
-            <marker date="1559093069066" expanded="true" signature="2049:6545" ph="{...}" />
-            <marker date="1559093069066" expanded="true" signature="2264:4761" ph="{...}" />
-            <marker date="1559093069066" expanded="true" signature="4862:5019" ph="{...}" />
-            <marker date="1559093069066" expanded="true" signature="5025:5249" ph="//..." />
-            <marker date="1559093069066" expanded="true" signature="6626:8046" ph="{...}" />
-            <marker date="1559093069066" expanded="true" signature="7612:8042" ph="{...}" />
-            <marker date="1559093069066" expanded="true" signature="7620:7727" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/thirdparty/wglu/wglu-debug-geometry.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="253" column="2" lean-forward="false" selection-start-line="253" selection-start-column="2" selection-end-line="253" selection-end-column="2" />
-          <folding>
-            <marker date="1559093041603" expanded="false" signature="0:1064" ph="/*...*/" />
-            <marker date="1559093041603" expanded="true" signature="1142:1518" ph="[...]" />
-            <marker date="1559093041603" expanded="true" signature="1534:1717" ph="//..." />
-            <marker date="1559093041603" expanded="true" signature="1738:2014" ph="[...]" />
-            <marker date="1559093041603" expanded="true" signature="2063:6797" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="2581:2611" ph="//..." />
-            <marker date="1559093041603" expanded="true" signature="4577:4607" ph="//..." />
-            <marker date="1559093041603" expanded="true" signature="4859:5455" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="5605:5998" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="6070:6100" ph="//..." />
-            <marker date="1559093041603" expanded="true" signature="6866:7424" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="7476:7649" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="7727:8289" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="8387:8671" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="8756:8990" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="9075:9267" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="9337:9507" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="9584:9785" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="9870:10104" ph="{...}" />
-            <marker date="1559093041603" expanded="true" signature="10175:10345" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="45" lean-forward="false" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="3495">
+          <caret line="253" column="2" selection-start-line="253" selection-start-column="2" selection-end-line="253" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebServer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="165">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Initialize.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="121" column="6" lean-forward="true" selection-start-line="121" selection-start-column="6" selection-end-line="121" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="90">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/models/ct.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204349">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="60" column="10" lean-forward="true" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="30">
+          <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/vr-cube-island.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="58" column="79" lean-forward="true" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="79" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OBJModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="46" column="96" lean-forward="true" selection-start-line="46" selection-start-column="96" selection-end-line="46" selection-end-column="96" />
         </state>
       </provider>
     </entry>
