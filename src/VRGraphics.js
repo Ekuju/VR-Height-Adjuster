@@ -36,8 +36,10 @@ class VRGraphics {
             mat4.perspective(VRGraphics._projectionMat, Math.PI*0.4, VRGraphics._webGLCanvas.width / VRGraphics._webGLCanvas.height, 0.1, 1024.0);
             mat4.identity(VRGraphics._viewMat);
             mat4.translate(VRGraphics._viewMat, VRGraphics._viewMat, [0, -VRGraphics.PLAYER_HEIGHT, 0]);
-            VRGraphics._player1.render(VRGraphics._projectionMat, VRGraphics._viewMat);
             VRGraphics._cubeIsland.render(VRGraphics._projectionMat, VRGraphics._viewMat, VRGraphics._stats);
+            VRGraphics._players.forEach(player => player.render(VRGraphics._projectionMat, VRGraphics._viewMat));
+            VRGraphics._leftControllerModel.render(VRGraphics._projectionMat, VRGraphics._viewMat);
+            VRGraphics._rightControllerModel.render(VRGraphics._projectionMat, VRGraphics._viewMat);
 
             VRGraphics._stats.renderOrtho();
         }
@@ -53,6 +55,16 @@ class VRGraphics {
         }
 
         VRGraphics.render(t);
+    }
+
+    static createPlayers() {
+        VRGraphics._players.push(new OBJModel(VRGraphics._gl, 'assets/models/ct.obj', [0.2, 0, -1], 2));
+        VRGraphics._players.push(new OBJModel(VRGraphics._gl, 'assets/models/ct.obj', [1.2, 0, -1.7], 1.8));
+        VRGraphics._players.push(new OBJModel(VRGraphics._gl, 'assets/models/ct.obj', [-0.8, 0, -0.7], 1.6764));
+        VRGraphics._players.push(new OBJModel(VRGraphics._gl, 'assets/models/t.obj', [-0.4, 0, 1.2], 1.9));
+        VRGraphics._players.push(new OBJModel(VRGraphics._gl, 'assets/models/t.obj', [-1.5, 0, 1.7], 1.70));
+        VRGraphics._players.push(new OBJModel(VRGraphics._gl, 'assets/models/t.obj', [1.2, 0, 0.5], 1.79));
+        VRGraphics._players.push(new OBJModel(VRGraphics._gl, 'assets/models/t.obj', [-1.25, 0, 0.43], 1.72));
     }
 
     static initWebGL(preserveDrawingBuffer) {
@@ -84,7 +96,9 @@ class VRGraphics {
         // how big the users play space. Construct a scene around a
         // default space size like 2 meters by 2 meters as a placeholder.
         VRGraphics._cubeIsland = new VRCubeIsland(VRGraphics._gl, texture, 4, 4);
-        VRGraphics._player1 = new OBJModel(VRGraphics._gl, '', 4, 4);
+        VRGraphics._leftControllerModel = new OBJModel(VRGraphics._gl, 'assets/models/left.obj', [0, 0, 0], 1);
+        VRGraphics._rightControllerModel = new OBJModel(VRGraphics._gl, 'assets/models/right.obj', [0, 0, 0], 1);
+        VRGraphics.createPlayers();
 
         const enablePerformanceMonitoring = WGLUUrl.getBool('enablePerformanceMonitoring', false);
         VRGraphics._stats = new WGLUStats(VRGraphics._gl, enablePerformanceMonitoring);
@@ -109,7 +123,6 @@ class VRGraphics {
                 // have a configured play area. These devices will return a stage
                 // size of 0.
                 VRGraphics._cubeIsland.resize(VRGraphics._vrDisplay.stageParameters.sizeX, VRGraphics._vrDisplay.stageParameters.sizeZ);
-                VRGraphics._player1.resize(VRGraphics._vrDisplay.stageParameters.sizeX, VRGraphics._vrDisplay.stageParameters.sizeZ);
             } else {
                 if (VRGraphics._vrDisplay.stageParameters) {
                     VRSamplesUtil.addInfo('VRDisplay reported stageParameters, but stage size was 0. Using default size.', 3000);
@@ -187,9 +200,35 @@ class VRGraphics {
         }
     }
 
+    static renderControllers(projection, view) {
+        const controllers = [];
+        const gamepads = navigator.getGamepads();
+        for (let i = 0; i < gamepads.length; i++) {
+            const gamepad = gamepads[i];
+            if (!gamepad || !gamepad.pose || !gamepad.displayId) {
+                continue;
+            }
+
+            controllers.push(gamepad);
+        }
+
+        if (controllers.length < 2) {
+            VRSamplesUtil.addError('Could not find both VR controllers.');
+            return;
+        }
+        view = view.slice(0);
+        mat4.translate(view, view, [0.5 + controllers[1].pose.position[0], 0.5 + controllers[1].pose.position[1], controllers[1].pose.position[2]]);
+
+        console.log(controllers);
+        VRGraphics._leftControllerModel.render(projection, view);
+        VRGraphics._rightControllerModel.render(projection, view);
+    }
+
     static renderSceneView(projection, view, pose) {
-        VRGraphics._player1.render(projection, view);
+        VRGraphics._players.forEach(player => player.render(projection, view));
         VRGraphics._cubeIsland.render(projection, view, VRGraphics._stats);
+
+        VRGraphics.renderControllers(projection, view);
 
         // For fun, draw a blue cube where the players head would have been if
         // we weren't taking the stageParameters into account. It'll start in
@@ -202,6 +241,7 @@ class VRGraphics {
         if (!position) {
             position = [0, 0, 0];
         }
+
         VRGraphics._debugGeom.bind(projection, view);
         VRGraphics._debugGeom.drawCube(orientation, position, 0.2, [0, 0, 1, 1]);
     }
@@ -279,5 +319,7 @@ VRGraphics._debugGeom = null;
 VRGraphics._viewMat = mat4.create();
 VRGraphics._projectionMat = mat4.create();
 VRGraphics._vrPresentButton = null;
+VRGraphics._rightControllerModel = null;
+VRGraphics._leftControllerModel = null;
 
-VRGraphics._player1 = null;
+VRGraphics._players = [];

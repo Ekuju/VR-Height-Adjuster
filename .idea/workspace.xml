@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4401dcec-ac0b-4690-989c-da7ac694416d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/models/t.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/assets/models/t.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/models/t.obj" beforeDir="false" afterPath="$PROJECT_DIR$/assets/models/t.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OBJModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/OBJModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VRGraphics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/VRGraphics.js" afterDir="false" />
     </list>
@@ -35,20 +36,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="234" column="96" lean-forward="true" selection-start-line="234" selection-start-column="96" selection-end-line="234" selection-end-column="96" />
+            <state relative-caret-position="711">
+              <caret line="218" column="29" lean-forward="true" selection-start-line="218" selection-start-column="29" selection-end-line="218" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OBJModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="115" column="60" selection-start-line="115" selection-start-column="60" selection-end-line="115" selection-end-column="60" />
+            <state relative-caret-position="649">
+              <caret line="256" column="59" selection-start-line="256" selection-start-column="59" selection-end-line="256" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -66,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/libs/vr-cube-island.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="700">
-              <caret line="50" column="61" lean-forward="true" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
+              <caret line="50" column="60" lean-forward="true" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -77,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/models/ct.obj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204349">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="500">
+              <caret line="13636" column="20" lean-forward="true" selection-start-line="13636" selection-start-column="20" selection-end-line="13636" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -104,18 +105,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onVRRequestPresent</find>
-      <find>_frameData</find>
-      <find>frameData</find>
-      <find>VRGraphics\.[a-zA-Z]+</find>
-      <find>gl</find>
-      <find>indexCount</find>
-      <find>gl</find>
-      <find>window.</find>
-      <find>PLAYER_HEIGHT</find>
-      <find>_width</find>
-      <find>width</find>
-      <find>_statsMat</find>
       <find>Cube</find>
       <find>CubeIsland</find>
       <find>cubeIsland</find>
@@ -123,7 +112,6 @@
       <find>lightFactor</find>
       <find>lightColor</find>
       <find>ambientColor</find>
-      <find>resize</find>
       <find>_indexCount</find>
       <find>new VRCubeIsland</find>
       <find>OBJModel {</find>
@@ -134,6 +122,19 @@
       <find>_cubeIsland</find>
       <find>enter</find>
       <find>console.log</find>
+      <find>resize</find>
+      <find>new OBJM</find>
+      <find>_player1</find>
+      <find>_players</find>
+      <find>new OBJMo</find>
+      <find>createPlayer</find>
+      <find>new VRC</find>
+      <find>_controllers</find>
+      <find>VRCubeIs</find>
+      <find>_leftControllerModel</find>
+      <find>render(pro</find>
+      <find>_players.forEach(</find>
+      <find>mat4</find>
     </findStrings>
     <replaceStrings>
       <replace>libs/thirdparty</replace>
@@ -154,8 +155,8 @@
         <option value="$PROJECT_DIR$/src/Initialize.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/libs/vr-cube-island.js" />
-        <option value="$PROJECT_DIR$/src/VRGraphics.js" />
         <option value="$PROJECT_DIR$/src/OBJModel.js" />
+        <option value="$PROJECT_DIR$/src/VRGraphics.js" />
       </list>
     </option>
   </component>
@@ -277,10 +278,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11076000" />
+    <option name="totallyTimeSpent" value="16136000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1830" y="-893" width="1808" height="1091" extended-state="0" />
+    <frame x="1840" y="-872" width="1808" height="1091" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23391159" />
@@ -327,13 +328,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/models/ct.obj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204349">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -341,27 +335,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="234" column="96" lean-forward="true" selection-start-line="234" selection-start-column="96" selection-end-line="234" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/vr-cube-island.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
-          <caret line="50" column="61" lean-forward="true" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
+          <caret line="50" column="60" lean-forward="true" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/models/ct.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="13636" column="20" lean-forward="true" selection-start-line="13636" selection-start-column="20" selection-end-line="13636" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/OBJModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="115" column="60" selection-start-line="115" selection-start-column="60" selection-end-line="115" selection-end-column="60" />
+        <state relative-caret-position="649">
+          <caret line="256" column="59" selection-start-line="256" selection-start-column="59" selection-end-line="256" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="218" column="29" lean-forward="true" selection-start-line="218" selection-start-column="29" selection-end-line="218" selection-end-column="29" />
         </state>
       </provider>
     </entry>
