@@ -14,21 +14,26 @@ class VRGraphics {
             VRGraphics._vrDisplay.getFrameData(VRGraphics._frameData);
 
             if (VRGraphics._vrDisplay.isPresenting) {
+                const leftViewMatrixScaled = mat4.create();
+                VRGraphics.scaleEyesForHeight(leftViewMatrixScaled, VRGraphics._frameData.leftViewMatrix, VRGraphics._frameData.rightViewMatrix);
+
+                const rightViewMatrixScaled = mat4.create();
+                VRGraphics.scaleEyesForHeight(rightViewMatrixScaled, VRGraphics._frameData.rightViewMatrix, VRGraphics._frameData.leftViewMatrix);
+
                 VRGraphics._gl.viewport(0, 0, VRGraphics._webGLCanvas.width * 0.5, VRGraphics._webGLCanvas.height);
-                VRGraphics.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.leftViewMatrix);
-                VRGraphics.renderSceneView(VRGraphics._frameData.leftProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.pose);
+                VRGraphics.getStandingViewMatrix(VRGraphics._viewMat, leftViewMatrixScaled);
+                VRGraphics.renderSceneView(VRGraphics._frameData.leftProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.leftViewMatrix, VRGraphics._frameData.pose);
 
                 VRGraphics._gl.viewport(VRGraphics._webGLCanvas.width * 0.5, 0, VRGraphics._webGLCanvas.width * 0.5, VRGraphics._webGLCanvas.height);
-                // VRGraphics._viewMat = mat4.clone(VRGraphics._frameData.rightViewMatrix);
-                VRGraphics.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.rightViewMatrix);
-                VRGraphics.renderSceneView(VRGraphics._frameData.rightProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.pose);
+                VRGraphics.getStandingViewMatrix(VRGraphics._viewMat, rightViewMatrixScaled);
+                VRGraphics.renderSceneView(VRGraphics._frameData.rightProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.rightViewMatrix, VRGraphics._frameData.pose);
 
                 VRGraphics._vrDisplay.submitFrame();
             } else {
                 VRGraphics._gl.viewport(0, 0, VRGraphics._webGLCanvas.width, VRGraphics._webGLCanvas.height);
                 mat4.perspective(VRGraphics._projectionMat, Math.PI * 0.4, VRGraphics._webGLCanvas.width / VRGraphics._webGLCanvas.height, 0.1, 1024.0);
                 VRGraphics.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.leftViewMatrix);
-                VRGraphics.renderSceneView(VRGraphics._projectionMat, VRGraphics._viewMat, VRGraphics._frameData.pose);
+                VRGraphics.renderSceneView(VRGraphics._projectionMat, VRGraphics._viewMat, VRGraphics._frameData.leftViewMatrix, VRGraphics._frameData.pose);
                 VRGraphics._stats.renderOrtho();
             }
         } else {
@@ -198,6 +203,23 @@ class VRGraphics {
 
     static scaleEyesForHeight(out, eyeIn, otherEyeIn) {
         const scale = VRGraphics.getHeightScaleValue();
+
+        const eyeRotationQuat = quat.create();
+        mat4.getRotation(eyeRotationQuat, eyeIn);
+
+        // I think these are both along the x axis only so I can probably not even subtract and just multiply the translation value by the scale
+        const eyeTranslation = vec3.create();
+        mat4.getTranslation(eyeTranslation, eyeIn);
+
+        const otherEyeTranslation = vec3.create();
+        mat4.getTranslation(otherEyeTranslation, otherEyeIn);
+
+        const difference = vec3.create();
+        vec3.subtract(difference, eyeTranslation, otherEyeTranslation);
+        vec3.scale(difference, difference, 0.5 * scale); // were scaling each eye so only do half
+
+        vec3.add(eyeTranslation, eyeTranslation, difference);
+        mat4.fromRotationTranslation(out, eyeRotationQuat, eyeTranslation);
     }
 
     static scaleForHeight(out, mat) {
@@ -235,7 +257,7 @@ class VRGraphics {
         }
     }
 
-    static renderControllers(projection, view) {
+    static renderControllers(projection, view, unstandingView) {
         const controllers = [];
         const gamepads = navigator.getGamepads();
         for (let i = 0; i < gamepads.length; i++) {
@@ -264,16 +286,16 @@ class VRGraphics {
             return;
         }
 
+        const controllerPositionScale = VRGraphics.getHeightScaleValue() + 1;
+
         if (controllers[0]) {
             const gamepadMat = mat4.create();
             mat4.fromRotationTranslation(gamepadMat, controllers[0].pose.orientation, controllers[0].pose.position);
             mat4.rotateY(gamepadMat, gamepadMat, Math.PI);
 
             // undo the view sittingToStandingTransform multiply
-            const unstandingView = mat4.create();
-            mat4.multiply(unstandingView, view, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
-
             mat4.multiply(gamepadMat, unstandingView, gamepadMat);
+
             VRGraphics._leftControllerModel.render(projection, gamepadMat);
         }
         if (controllers[1]) {
@@ -282,21 +304,19 @@ class VRGraphics {
             mat4.rotateY(gamepadMat, gamepadMat, Math.PI);
 
             // undo the view sittingToStandingTransform multiply
-            const unstandingView = mat4.create();
-            mat4.multiply(unstandingView, view, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
-
             mat4.multiply(gamepadMat, unstandingView, gamepadMat);
+
             VRGraphics._rightControllerModel.render(projection, gamepadMat);
         }
     }
 
-    static renderSceneView(projection, view, pose) {
+    static renderSceneView(projection, view, originalView, pose) {
         VRGraphics.scaleForHeight(view, view);
 
         VRGraphics._players.forEach(player => player.render(projection, view));
         VRGraphics._cubeIsland.render(projection, view, VRGraphics._stats);
 
-        VRGraphics.renderControllers(projection, view);
+        VRGraphics.renderControllers(projection, view, originalView);
 
         // For fun, draw a blue cube where the players head would have been if
         // we weren't taking the stageParameters into account. It'll start in
