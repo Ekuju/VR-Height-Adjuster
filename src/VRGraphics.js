@@ -19,6 +19,7 @@ class VRGraphics {
                 VRGraphics.renderSceneView(VRGraphics._frameData.leftProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.pose);
 
                 VRGraphics._gl.viewport(VRGraphics._webGLCanvas.width * 0.5, 0, VRGraphics._webGLCanvas.width * 0.5, VRGraphics._webGLCanvas.height);
+                // VRGraphics._viewMat = mat4.clone(VRGraphics._frameData.rightViewMatrix);
                 VRGraphics.getStandingViewMatrix(VRGraphics._viewMat, VRGraphics._frameData.rightViewMatrix);
                 VRGraphics.renderSceneView(VRGraphics._frameData.rightProjectionMatrix, VRGraphics._viewMat, VRGraphics._frameData.pose);
 
@@ -171,6 +172,15 @@ class VRGraphics {
         VRGraphics.updateStage();
     }
 
+    static getCurrentHeight(mat) {
+        const translation = vec3.create();
+        mat4.getTranslation(translation, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
+        vec3.add(translation, translation, VRGraphics._frameData.pose.position);
+        vec3.scale(translation, translation, -1);
+
+        return (VRGraphics.VR_HEIGHT_ADD - translation[1]) * VRGraphics.FEET_PER_METER;
+    }
+
     static onClick() {
         // Reset the background color to a random value
         VRGraphics._gl.clearColor(
@@ -180,15 +190,39 @@ class VRGraphics {
             1.0);
     }
 
+    static getHeightScaleValue() {
+        // subtracting add height first to account for eyes to top of head constant height
+        // subtracting 1 bc this is going to be added relatively
+        return (VRGraphics._desiredHeight - VRGraphics.VR_HEIGHT_ADD) / (VRGraphics._realHeight - VRGraphics.VR_HEIGHT_ADD) - 1;
+    }
+
+    static scaleEyesForHeight(out, eyeIn, otherEyeIn) {
+        const scale = VRGraphics.getHeightScaleValue();
+    }
+
+    static scaleForHeight(out, mat) {
+        const scale = VRGraphics.getHeightScaleValue();
+
+        // scale head position
+        const translation = vec3.create();
+        mat4.getTranslation(translation, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
+        vec3.add(translation, translation, VRGraphics._frameData.pose.position);
+        vec3.scale(translation, translation, -scale);
+
+        mat4.translate(out, mat, translation);
+
+        // scale controllers
+    }
+
     static getStandingViewMatrix(out, view) {
         if (VRGraphics._vrDisplay.stageParameters) {
             // If the headset provides stageParameters use the
             // sittingToStandingTransform to transform the view matrix into a
             // space where the floor in the center of the users play space is the
             // origin.
-            mat4.invert(out, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
-            console.log(VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
-            mat4.multiply(out, view, out);
+            const inverted = mat4.create();
+            mat4.invert(inverted, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
+            mat4.multiply(out, view, inverted);
         } else {
             // Otherwise you'll want to translate the view to compensate for the
             // scene floor being at Y=0. Ideally this should match the user's
@@ -206,30 +240,59 @@ class VRGraphics {
         const gamepads = navigator.getGamepads();
         for (let i = 0; i < gamepads.length; i++) {
             const gamepad = gamepads[i];
-            if (!gamepad || !gamepad.pose || !gamepad.displayId) {
+            if (!gamepad || !gamepad.pose || !gamepad.id) {
                 continue;
             }
 
-            controllers.push(gamepad);
+            if (gamepad.id.toLowerCase().includes('left')) {
+                controllers[0] = gamepad;
+            }
+            if (gamepad.id.toLowerCase().includes('right')) {
+                controllers[1] = gamepad;
+            }
         }
 
-        if (controllers.length < 2) {
+        if (controllers.length === 0) {
             if (!VRGraphics._controllerAlertSent) {
                 VRGraphics._controllerAlertSent = true;
-                VRSamplesUtil.addError('Could not find both VR controllers.');
+                VRSamplesUtil.addError('Could not find a VR controller.', 2000);
+                setTimeout(() => {
+                    VRGraphics._controllerAlertSent = false;
+                }, 4000);
             }
 
             return;
         }
-        view = view.slice(0);
-        mat4.translate(view, view, [0.5 + controllers[1].pose.position[0], 0.5 + controllers[1].pose.position[1], controllers[1].pose.position[2]]);
 
-        console.log(controllers);
-        VRGraphics._leftControllerModel.render(projection, view);
-        VRGraphics._rightControllerModel.render(projection, view);
+        if (controllers[0]) {
+            const gamepadMat = mat4.create();
+            mat4.fromRotationTranslation(gamepadMat, controllers[0].pose.orientation, controllers[0].pose.position);
+            mat4.rotateY(gamepadMat, gamepadMat, Math.PI);
+
+            // undo the view sittingToStandingTransform multiply
+            const unstandingView = mat4.create();
+            mat4.multiply(unstandingView, view, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
+
+            mat4.multiply(gamepadMat, unstandingView, gamepadMat);
+            VRGraphics._leftControllerModel.render(projection, gamepadMat);
+        }
+        if (controllers[1]) {
+            const gamepadMat = mat4.create();
+            mat4.fromRotationTranslation(gamepadMat, controllers[1].pose.orientation, controllers[1].pose.position);
+            mat4.rotateY(gamepadMat, gamepadMat, Math.PI);
+
+            // undo the view sittingToStandingTransform multiply
+            const unstandingView = mat4.create();
+            mat4.multiply(unstandingView, view, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
+
+            mat4.multiply(gamepadMat, unstandingView, gamepadMat);
+            VRGraphics._rightControllerModel.render(projection, gamepadMat);
+        }
     }
 
     static renderSceneView(projection, view, pose) {
+        VRGraphics.scaleForHeight(view, view);
+
         VRGraphics._players.forEach(player => player.render(projection, view));
         VRGraphics._cubeIsland.render(projection, view, VRGraphics._stats);
 
@@ -313,6 +376,8 @@ class VRGraphics {
 }
 
 VRGraphics.PLAYER_HEIGHT = 0;
+VRGraphics.VR_HEIGHT_ADD = 0.06940000344;
+VRGraphics.FEET_PER_METER = 3.28084;
 
 VRGraphics._vrDisplay = null;
 VRGraphics._frameData = null;
@@ -329,3 +394,6 @@ VRGraphics._leftControllerModel = null;
 VRGraphics._controllerAlertSent = false;
 
 VRGraphics._players = [];
+
+VRGraphics._realHeight = 1.6764;
+VRGraphics._desiredHeight = 1.778;

@@ -149,7 +149,7 @@ class VRCubeIsland {
         // Main "island", covers where the user can safely stand. Top of the cube
         // (the ground the user stands on) should be at Y=0 to align with users
         // floor. X=0 and Z=0 should be at the center of the users play space.
-        appendBox(-width * 0.5, -width, -depth * 0.5, width * 0.5, 0, depth * 0.5);
+        // appendBox(-width * 0.5, -width, -depth * 0.5, width * 0.5, 0, depth * 0.5);
 
         // A sprinkling of other cubes to make things more visually interesting.
         appendCube(1.1, 0.3, (-depth * 0.5) - 0.8, 0.5);
