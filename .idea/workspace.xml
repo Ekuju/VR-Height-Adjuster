@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="4401dcec-ac0b-4690-989c-da7ac694416d" name="Default" comment="" />
+=======
+    <list default="true" id="4401dcec-ac0b-4690-989c-da7ac694416d" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/scene.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/scene.gltf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_0_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_10_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_11_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_12_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_13_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_14_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_15_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_16_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_17_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_18_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_19_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_1_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_20_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_21_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_22_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_23_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_24_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_25_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_26_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_27_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_28_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_29_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_2_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_30_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_31_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_32_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_33_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_3_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_4_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_5_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_6_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_7_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_8_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/models/de_dust2/textures/material_9_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/thirdparty/threejs/BoxLineGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/thirdparty/threejs/GLTFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/thirdparty/threejs/OrbitControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/thirdparty/threejs/WebVR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/thirdparty/threejs/WebVRCamera.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/thirdparty/threejs/three.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Initialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initialize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VRGraphics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/VRGraphics.js" afterDir="false" />
+    </list>
+>>>>>>> origin/master
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,8 +68,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="435">
               <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+=======
+            <state relative-caret-position="270">
+              <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -25,26 +82,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Initialize.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="90">
               <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+=======
+            <state relative-caret-position="105">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="156">
               <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OBJModel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="649">
               <caret line="256" column="59" selection-start-line="256" selection-start-column="59" selection-end-line="256" selection-end-column="59" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/libs/thirdparty/threejs/WebVR.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/thirdparty/threejs/WebVRCamera.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="38" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="38" />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -61,16 +148,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/vr-cube-island.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="700">
               <caret line="50" column="60" lean-forward="true" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="2925">
+              <caret line="197" column="54" selection-start-line="197" selection-start-column="54" selection-end-line="197" selection-end-column="54" />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/assets/models/ct.obj">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
@@ -80,6 +173,8 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+=======
+>>>>>>> origin/master
         <entry file="file://$PROJECT_DIR$/WebServer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -100,6 +195,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
       <find>Cube</find>
       <find>CubeIsland</find>
       <find>cubeIsland</find>
@@ -130,6 +226,38 @@
       <find>render(pro</find>
       <find>_players.forEach(</find>
       <find>mat4</find>
+=======
+      <find>stats</find>
+      <find>initWebGL</find>
+      <find>onResize</find>
+      <find>static</find>
+      <find>getFrameData</find>
+      <find>_frameData =</find>
+      <find>frameData =</find>
+      <find>frameData</find>
+      <find>t</find>
+      <find>projectionMat</find>
+      <find>mat4.create()</find>
+      <find>_projectionMat</find>
+      <find>_webGLGraphics</find>
+      <find>webglCanvas</find>
+      <find>vrDisplay</find>
+      <find>cubeIsland</find>
+      <find>gl</find>
+      <find>getStandingViewMatrix</find>
+      <find>geometry</find>
+      <find>onWindowResize</find>
+      <find>radius</find>
+      <find>_scene.add</find>
+      <find>_room</find>
+      <find>VRGraphics._camera</find>
+      <find>VRGraphics._scene.</find>
+      <find>_camera.</find>
+      <find>handleController</find>
+      <find>_controller1</find>
+      <find>display</find>
+      <find>showEnterVR</find>
+>>>>>>> origin/master
     </findStrings>
     <replaceStrings>
       <replace>libs/thirdparty</replace>
@@ -149,9 +277,14 @@
         <option value="$PROJECT_DIR$/WebServer.js" />
         <option value="$PROJECT_DIR$/src/Initialize.js" />
         <option value="$PROJECT_DIR$/index.html" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/libs/vr-cube-island.js" />
         <option value="$PROJECT_DIR$/src/OBJModel.js" />
+=======
+>>>>>>> origin/master
         <option value="$PROJECT_DIR$/src/VRGraphics.js" />
+        <option value="$PROJECT_DIR$/libs/thirdparty/WebVRCamera.js" />
+        <option value="$PROJECT_DIR$/libs/thirdparty/threejs/WebVRCamera.js" />
       </list>
     </option>
   </component>
@@ -161,10 +294,18 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="961" />
+=======
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1830" />
+    <option name="y" value="-893" />
+    <option name="width" value="1808" />
+    <option name="height" value="1091" />
+>>>>>>> origin/master
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -179,17 +320,33 @@
             <path>
               <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
               <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
             </path>
             <path>
               <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
               <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+>>>>>>> origin/master
+            </path>
+            <path>
+              <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+>>>>>>> origin/master
             </path>
             <path>
               <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
               <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="de_dust2" type="462c0819:PsiDirectoryNode" />
+>>>>>>> origin/master
             </path>
             <path>
               <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
@@ -205,6 +362,16 @@
             <path>
               <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
               <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="thirdparty" type="462c0819:PsiDirectoryNode" />
+              <item name="threejs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VR-Size-Adjuster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR-Size-Adjuster" type="462c0819:PsiDirectoryNode" />
+>>>>>>> origin/master
               <item name="libs" type="462c0819:PsiDirectoryNode" />
               <item name="thirdparty" type="462c0819:PsiDirectoryNode" />
               <item name="wglu" type="462c0819:PsiDirectoryNode" />
@@ -219,7 +386,10 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+<<<<<<< HEAD
       <pane id="Scratches" />
+=======
+>>>>>>> origin/master
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,17 +398,27 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/models" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+>>>>>>> origin/master
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs/thirdparty/threejs" />
+      <recent name="$PROJECT_DIR$/libs/thirdparty" />
       <recent name="C:\Users\admin\Projects\VR Height Adjuster\assets\icons" />
       <recent name="C:\Users\admin\Projects\VR Height Adjuster\assets\textures" />
       <recent name="C:\Users\admin\Projects\VR Height Adjuster\assets" />
-      <recent name="C:\Users\admin\Projects\VR Height Adjuster\libs\thirdparty\wglu" />
-      <recent name="C:\Users\admin\Projects\VR Height Adjuster\libs\thirdparty" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/models" />
+      <recent name="C:\Users\admin\Projects\VR Height Adjuster" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -268,10 +448,12 @@
       <option name="presentableId" value="Default" />
       <updated>1559092954262</updated>
       <workItem from="1559092955424" duration="5712000" />
+      <workItem from="1559242444999" duration="6121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="16337000" />
   </component>
   <component name="ToolWindowManager">
@@ -283,6 +465,23 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+=======
+    <option name="totallyTimeSpent" value="11833000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1830" y="-893" width="1808" height="1091" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23391159" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32932934" />
+>>>>>>> origin/master
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -295,6 +494,14 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+<<<<<<< HEAD
+=======
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+>>>>>>> origin/master
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,9 +509,22 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/libs/thirdparty/wglu/wglu-debug-geometry.js">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3495">
           <caret line="253" column="2" selection-start-line="253" selection-start-column="2" selection-end-line="253" selection-end-column="2" />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3495">
+          <caret line="253" column="2" selection-start-line="253" selection-start-column="2" selection-end-line="253" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/vr-cube-island.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2925">
+          <caret line="197" column="54" selection-start-line="197" selection-start-column="54" selection-end-line="197" selection-end-column="54" />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -312,6 +532,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -319,11 +540,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+=======
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/src/Initialize.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="435">
           <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
         </state>
@@ -350,13 +574,43 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="649">
           <caret line="256" column="59" selection-start-line="256" selection-start-column="59" selection-end-line="256" selection-end-column="59" />
+=======
+        <state relative-caret-position="105">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/thirdparty/threejs/WebVRCamera.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="38" />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/VRGraphics.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="156">
           <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+=======
+        <state relative-caret-position="335">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/thirdparty/threejs/WebVR.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>

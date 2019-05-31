@@ -16,58 +16,13 @@ found in the LICENSE file.
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
 
-    <!--Chrome origin trial header-->
-    <meta http-equiv="origin-trial" data-feature="WebVR" data-expires="2017-04-13" content="AtpEVUJTjLpU/IMdKA/u8TRWqVUKfA6aJQsonwi01IPxqA16zX7L4BMa9E4g4DdJW80v3N6jqde4pXeqd2GYCg4AAABJeyJvcmlnaW4iOiJodHRwczovL3dlYnZyLmluZm86NDQzIiwiZmVhdHVyZSI6IldlYlZSIiwiZXhwaXJ5IjoxNDkyMTAzODUyfQ==">
-
     <title>05 - Room Scale</title>
 
-    <!--
-      This sample demonstrates how to create scenes that align with the space
-      physically available to the user (when that information is available).
-    -->
-
-    <style>
-        #webgl-canvas {
-            box-sizing: border-box;
-            height: 100%;
-            left: 0;
-            margin: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-        }
-    </style>
-
-    <!-- This entire block in only to facilitate dynamically enabling and
-    disabling the WebVR polyfill, and is not necessary for most WebVR apps.
-    If you want to use the polyfill in your app, just include the js file and
-    everything will work the way you want it to by default. -->
-    <script>
-        var WebVRConfig = {
-            // Prevents the polyfill from initializing automatically.
-            DEFER_INITIALIZATION: true,
-            // Ensures the polyfill is always active when initialized, even if the
-            // native API is available. This is probably NOT what most pages want.
-            ALWAYS_APPEND_POLYFILL_DISPLAY: true,
-            // Polyfill optimizations
-            DIRTY_SUBMIT_FRAME_BINDINGS: true,
-            BUFFER_SCALE: 0.75,
-        };
-    </script>
-    <script src="libs/thirdparty/webvr-polyfill.js"></script>
-    <script src="libs/thirdparty/wglu/wglu-url.js"></script>
-    <script>
-        // Dynamically turn the polyfill on if requested by the query args.
-        if (WGLUUrl.getBool('polyfill', false)) {
-            InitializeWebVRPolyfill();
-        } else {
-            // Shim for migration from older version of WebVR. Shouldn't be necessary for very long.
-            InitializeSpecShim();
-        }
-    </script>
-    <!-- End sample polyfill enabling logic -->
-
-    <script src="libs/thirdparty/gl-matrix-min.js"></script>
+    <script src="libs/thirdparty/threejs/three.min.js"></script>
+    <script src="libs/thirdparty/threejs/WebVR.js"></script>
+    <script src="libs/thirdparty/threejs/BoxLineGeometry.js"></script>
+    <script src="libs/thirdparty/threejs/OrbitControls.js"></script>
+    <script src="libs/thirdparty/threejs/GLTFLoader.js"></script>
 
     <script src="libs/thirdparty/wglu/wglu-debug-geometry.js"></script>
     <script src="libs/thirdparty/wglu/wglu-program.js"></script>
@@ -82,6 +37,5 @@ found in the LICENSE file.
     <script src="src/VRGraphics.js"></script>
 </head>
 <body>
-<canvas id="webgl-canvas"></canvas>
 </body>
 </html>
