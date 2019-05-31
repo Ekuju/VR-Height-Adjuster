@@ -18,7 +18,9 @@ found in the LICENSE file.
 
     <meta http-equiv="origin-trial" data-feature="WebVR" data-expires="2017-04-13" content="AtpEVUJTjLpU/IMdKA/u8TRWqVUKfA6aJQsonwi01IPxqA16zX7L4BMa9E4g4DdJW80v3N6jqde4pXeqd2GYCg4AAABJeyJvcmlnaW4iOiJodHRwczovL3dlYnZyLmluZm86NDQzIiwiZmVhdHVyZSI6IldlYlZSIiwiZXhwaXJ5IjoxNDkyMTAzODUyfQ==">
 
-    <title>05 - Room Scale</title>
+    <title>User Height Scaling Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
         #webgl-canvas {
@@ -66,10 +68,36 @@ found in the LICENSE file.
     <script src="libs/vr-samples-util.js"></script>
 
     <script src="src/Initialize.js"></script>
+    <script src="src/InputHandler.js"></script>
     <script src="src/OBJModel.js"></script>
     <script src="src/VRGraphics.js"></script>
 </head>
 <body>
     <canvas id="webgl-canvas"></canvas>
+    <div class="buttonContainer" id="button-container">
+        <div class="description">
+            Use the left/right arrow keys to adjust your real height.<br />Use the up/down arrow keys to adjust your desired height.<br /><br />Realistically the desired height should be capped to +/- ~20% of your real height.
+        </div>
+        <div class="flex">
+            <div class="section">
+                <div class="label">Enabled</div>
+                <input class="checkbox" type="checkbox" id="enabled-checkbox" />
+            </div>
+            <div class="section">
+                <div class="cover"></div>
+                <div class="label">Real height (feet)</div>
+                <button id="real-height-decrease">-</button>
+                <input id="real-height-input" type="number" />
+                <button id="real-height-increase">+</button>
+            </div>
+            <div class="section">
+                <div class="cover"></div>
+                <div class="label">Desired height (feet)</div>
+                <button id="desired-height-decrease">-</button>
+                <input id="desired-height-input" type="number" />
+                <button id="desired-height-increase">+</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

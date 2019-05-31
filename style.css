@@ -1,0 +1,66 @@
+.buttonContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    padding: 16px;
+
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 10000;
+}
+
+.buttonContainer.disabled button {
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.buttonContainer.disabled input {
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.buttonContainer .description {
+    margin-bottom: 16px;
+}
+
+.buttonContainer .flex {
+    width: 100%;
+    display: flex;
+}
+
+.buttonContainer .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: none;
+
+    z-index: 10;
+}
+
+.buttonContainer.disabled .cover {
+    display: block;
+}
+
+.buttonContainer .section {
+    position: relative;
+}
+
+.buttonContainer .section + .section {
+    margin-left: 32px;
+}
+
+.buttonContainer .checkbox {
+    margin-left: 0;
+}
+
+.buttonContainer .label {
+
+}

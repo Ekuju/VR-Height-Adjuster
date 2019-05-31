@@ -6,4 +6,5 @@
 
 window.onload = () => {
     VRGraphics.initialize();
+    InputHandler.initialize();
 };

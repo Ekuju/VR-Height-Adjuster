@@ -196,9 +196,11 @@ class VRGraphics {
     }
 
     static getHeightScaleValue() {
+        const realHeight = InputHandler.getRealHeight();
+        const desiredHeight = InputHandler.getDesiredHeight();
         // subtracting add height first to account for eyes to top of head constant height
         // subtracting 1 bc this is going to be added relatively
-        return (VRGraphics._desiredHeight - VRGraphics.VR_HEIGHT_ADD) / (VRGraphics._realHeight - VRGraphics.VR_HEIGHT_ADD) - 1;
+        return (desiredHeight - VRGraphics.VR_HEIGHT_ADD) / (realHeight - VRGraphics.VR_HEIGHT_ADD) - 1;
     }
 
     static scaleEyesForHeight(out, eyeIn, otherEyeIn) {
@@ -232,8 +234,6 @@ class VRGraphics {
         vec3.scale(translation, translation, -scale);
 
         mat4.translate(out, mat, translation);
-
-        // scale controllers
     }
 
     static getStandingViewMatrix(out, view) {
@@ -286,7 +286,7 @@ class VRGraphics {
             return;
         }
 
-        const controllerPositionScale = VRGraphics.getHeightScaleValue() + 1;
+        // NOTE: the controllers are rendered in view space or something so scaling isn't necessary
 
         if (controllers[0]) {
             const gamepadMat = mat4.create();
@@ -414,6 +414,3 @@ VRGraphics._leftControllerModel = null;
 VRGraphics._controllerAlertSent = false;
 
 VRGraphics._players = [];
-
-VRGraphics._realHeight = 1.6764;
-VRGraphics._desiredHeight = 1.778;
