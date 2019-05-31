@@ -187,6 +187,7 @@ class VRGraphics {
             // space where the floor in the center of the users play space is the
             // origin.
             mat4.invert(out, VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
+            console.log(VRGraphics._vrDisplay.stageParameters.sittingToStandingTransform);
             mat4.multiply(out, view, out);
         } else {
             // Otherwise you'll want to translate the view to compensate for the
@@ -213,7 +214,11 @@ class VRGraphics {
         }
 
         if (controllers.length < 2) {
-            VRSamplesUtil.addError('Could not find both VR controllers.');
+            if (!VRGraphics._controllerAlertSent) {
+                VRGraphics._controllerAlertSent = true;
+                VRSamplesUtil.addError('Could not find both VR controllers.');
+            }
+
             return;
         }
         view = view.slice(0);
@@ -307,7 +312,7 @@ class VRGraphics {
     }
 }
 
-VRGraphics.PLAYER_HEIGHT = 1.8;
+VRGraphics.PLAYER_HEIGHT = 0;
 
 VRGraphics._vrDisplay = null;
 VRGraphics._frameData = null;
@@ -321,5 +326,6 @@ VRGraphics._projectionMat = mat4.create();
 VRGraphics._vrPresentButton = null;
 VRGraphics._rightControllerModel = null;
 VRGraphics._leftControllerModel = null;
+VRGraphics._controllerAlertSent = false;
 
 VRGraphics._players = [];
